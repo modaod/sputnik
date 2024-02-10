@@ -94,6 +94,7 @@ public class Review {
                 .count();
     }
 
+    // New test
     public long getViolationDifferenceCount(Severity severity){
         return getTotalViolationCount() - getViolationCount(severity);
     }
