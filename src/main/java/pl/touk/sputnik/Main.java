@@ -15,6 +15,7 @@ import pl.touk.sputnik.connector.ConnectorFacadeFactory;
 import pl.touk.sputnik.connector.ConnectorType;
 import pl.touk.sputnik.engine.Engine;
 // Jenkins Test
+// Jenkins Test 2
 public final class Main {
     private static final String SPUTNIK = "sputnik";
     private static final String HEADER = "Sputnik - review your Gerrit patchset with Checkstyle, PMD, SpotBugs and other processors!";
