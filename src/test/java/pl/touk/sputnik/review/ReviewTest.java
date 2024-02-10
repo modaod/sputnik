@@ -56,8 +56,18 @@ class ReviewTest {
 
     @Test
     void shouldCountCorrectDifference() {
-        long totalViolationCount = review.getViolationDifferenceCount(Severity.INFO);
-        assertThat(totalViolationCount).isEqualTo(1);
+        when(file1.getComments()).thenReturn(asList(mockComment(), mockComment()));
+        when(file2.getComments()).thenReturn(singletonList(mockComment()));
+        long totalViolationCount = review.getTotalViolationCount();
+        Comment errorComment = mockComment(Severity.ERROR);
+        Comment infoComment1 = mockComment(Severity.INFO);
+        Comment infoComment2 = mockComment(Severity.INFO);
+        when(file1.getComments()).thenReturn(asList(errorComment, infoComment1));
+        when(file2.getComments()).thenReturn(singletonList(infoComment2));
+
+        long totalSeverityViolationCount = review.getViolationCount(Severity.INFO);
+        long difference = review.getViolationDifferenceCount(Severity.INFO);
+        assertThat(difference).isEqualTo(totalViolationCount-totalSeverityViolationCount);
     }
 
     private Comment mockComment() {
