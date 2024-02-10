@@ -54,6 +54,12 @@ class ReviewTest {
         assertThat(totalViolationCount).isEqualTo(2);
     }
 
+    @Test
+    void shouldCountCorrectDifference() {
+        long totalViolationCount = review.getViolationDifferenceCount(Severity.INFO);
+        assertThat(totalViolationCount).isEqualTo(1);
+    }
+
     private Comment mockComment() {
         return mock(Comment.class);
     }

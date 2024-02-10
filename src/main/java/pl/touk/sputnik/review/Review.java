@@ -94,6 +94,10 @@ public class Review {
                 .count();
     }
 
+    public long getViolationDifferenceCount(Severity severity){
+        return getTotalViolationCount() - getViolationCount(severity);
+    }
+
     @NoArgsConstructor
     private static class ReviewFileSourceDirFunction implements Function<ReviewFile, String> {
 
