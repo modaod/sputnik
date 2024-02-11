@@ -24,6 +24,7 @@ public final class Main {
 
     private Main() {}
 
+    // Commit test video
     public static void main(String[] args) {
         printWelcomeMessage();
         CliWrapper cliWrapper = new CliWrapper();
