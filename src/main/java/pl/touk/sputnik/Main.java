@@ -44,7 +44,6 @@ public final class Main {
         new Engine(facade, facade, configuration).run();
     }
 
-    // Commit test video 2
     private static ConnectorFacade getConnectorFacade(Configuration configuration) {
         ConnectorType connectorType = ConnectorType.getValidConnectorType(configuration.getProperty(GeneralOption.CONNECTOR_TYPE));
         ConnectorFacade facade = null;
