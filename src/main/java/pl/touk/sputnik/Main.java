@@ -24,6 +24,7 @@ public final class Main {
 
     private Main() {}
 
+    // Commit test video
     public static void main(String[] args) {
         printWelcomeMessage();
         CliWrapper cliWrapper = new CliWrapper();
@@ -63,6 +64,7 @@ public final class Main {
         helpFormatter.printHelp(SPUTNIK, cliOptions.getOptions(), true);
     }
 
+    // commit test video 2
     private static void printWelcomeMessage() {
         System.out.println("Sputnik version " + Main.class.getPackage().getImplementationVersion());
     }
