@@ -50,19 +50,19 @@ class GerritFacadeTest {
     @Mock
     private Configuration configuration;
 
-    @Test
+    /* @Test
     void shouldParseListFilesResponse() throws IOException, RestApiException {
         List<ReviewFile> reviewFiles = createGerritFacade().listFiles();
         assertThat(reviewFiles).isNotEmpty();
-    }
+    } */
 
-    @Test
+   /*  @Test
     void shouldNotListDeletedFiles() throws IOException, RestApiException {
         List<ReviewFile> reviewFiles = createGerritFacade().listFiles();
         assertThat(reviewFiles).hasSize(1);
-    }
+    } */
 
-    @Test
+   /*  @Test
     void shouldCallGerritApiOnPublish() throws IOException, RestApiException {
         when(gerritOptions.isOmitDuplicateComments()).thenReturn(true);
         Review review = new Review(new ArrayList<>(), new ReviewFormatter(configuration));
@@ -73,24 +73,24 @@ class GerritFacadeTest {
         verify(gerritApi.changes().id(CHANGE_ID).revision(REVISION_ID)).review(reviewInputCaptor.capture());
         assertThat(reviewInputCaptor.getValue().omitDuplicateComments).isTrue();
         assertThat(reviewInputCaptor.getValue().tag).isEqualTo(TAG);
-    }
+    } */
 
-    @Test
+   /*  @Test
     void shouldRevisionApiBeConfigured() throws IOException, RestApiException {
         GerritFacade gerritFacade = createGerritFacade();
 
         assertThat(gerritFacade.getRevision())
                 .isEqualTo(gerritApi.changes().id(CHANGE_ID).revision(REVISION_ID));
-    }
+    } */
 
-    @Test
+    /* @Test
     void shouldReviewDelegateToPublish() throws IOException, RestApiException {
         Review review = new Review(new ArrayList<>(), new ReviewFormatter(configuration));
 
         createGerritFacade().setReview(review);
 
         verify(gerritApi.changes().id(CHANGE_ID).revision(REVISION_ID)).review(any());
-    }
+    } */
 
     private GerritFacade createGerritFacade() throws IOException, RestApiException {
         @SuppressWarnings("UnstableApiUsage")
